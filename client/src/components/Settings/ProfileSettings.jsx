@@ -8,6 +8,8 @@ import { storage } from "../../firebaseConfig";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const ProfileSettings = () => {
   const user = useSelector((state) => state.user.value);
@@ -41,13 +43,11 @@ const ProfileSettings = () => {
       const res = await axios.patch("/api/user/update", data, {
         withCredentials: true,
       });
-      if(res)
-      {
-        toast.success("Successfully updated profile details.")
+      if (res) {
+        toast.success("Successfully updated profile details.");
       }
-      
     } catch (err) {
-      toast.error(err.response.data.message)
+      toast.error(err.response.data.message);
     }
   };
 
@@ -136,16 +136,37 @@ const ProfileSettings = () => {
             <div className="overflow-hidden flex items-center justify-center bg-black w-28 h-28 rounded-full">
               {watch("avatar") ? (
                 watch("avatar")[0] ? (
-                  <img
-                    className="h-full w-full"
+                  // <img
+                  //   className="h-full w-full"
+                  //   src={URL.createObjectURL(watch("avatar")[0])}
+                  //   alt=""
+                  // />
+                  <LazyLoadImage
+                    effect="blur"
                     src={URL.createObjectURL(watch("avatar")[0])}
-                    alt=""
+                    alt="profile"
+                    height="full"
+                    width="full"
                   />
                 ) : (
-                  <img className="rounded-full" src={user.avatarURL} alt="" />
+                  <LazyLoadImage
+                    effect="blur"
+                    className="rounded-full"
+                    src={user.avatarURL}
+                    alt=""
+                    height="full"
+                    width="full"
+                  />
                 )
               ) : (
-                <img className="rounded-full" src={user.avatarURL} alt="" />
+                <LazyLoadImage
+                  effect="blur"
+                  className="rounded-full"
+                  src={user.avatarURL}
+                  alt=""
+                  height="full"
+                  width="full"
+                />
               )}
             </div>
             <input

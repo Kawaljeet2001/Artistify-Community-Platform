@@ -11,7 +11,7 @@ const cardData = [
       {
         icon: <BiInfinite className="text-lightblue text-4xl" />,
         heading: "Unlimited Learning",
-        desc: "Unlimited Earning from Industry Experts.",
+        desc: "Unlimited Learning from Industry Experts and Community members.",
       },
       {
         icon: <MdWebAsset className="text-lightblue text-4xl" />,

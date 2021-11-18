@@ -11,8 +11,7 @@ const ArtworkDetail = () => {
   const getArtworkDetails = async () => {
     try {
       const res = await axios.get(`/api/artwork/${artworkid}`);
-      setDetails(res.data.data);
-      console.log(res.data);
+      setDetails(res.data);
     } catch (err) {
       if (err) {
         console.log("Not found");
@@ -26,8 +25,8 @@ const ArtworkDetail = () => {
 
   return (
     <div className="flex items-center flex-col bg-darkBlack pt-24 pb-16 min-h-screen">
-      {details && <ArtworkDescription data = {details}/>}
-      {details && <ArtworkImages images = {details.artworkImages}/>}
+      {details && <ArtworkDescription data={details} />}
+      {details && <ArtworkImages images={details.data.artworkImages} />}
     </div>
   );
 };

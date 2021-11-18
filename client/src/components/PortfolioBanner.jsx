@@ -8,6 +8,8 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const PortfolioBanner = ({ userDetails }) => {
   const user = useSelector((state) => state.user.value);
@@ -70,7 +72,7 @@ const PortfolioBanner = ({ userDetails }) => {
       />
       <BannerProfileInfo userDetails={userDetails} />
       {user && userDetails && user.username === userDetails.username && (
-        <div className="absolute right-10 top-10 flex items-end flex-col">
+        <div className="absolute right-10 top-10 z-30 flex items-end flex-col">
           <button
             className="flex items-center text-white bg-darkBlack my-1 px-2 py-1 border border-gray-500 opacity-60 hover:opacity-100 transition duration-200"
             style={{ fontSize: "12px" }}
@@ -79,8 +81,6 @@ const PortfolioBanner = ({ userDetails }) => {
             disabled={isUploading}
           >
             <HiUpload className="font-bold text-base text-lightblue" /> &nbsp;
-            {/* {userDetails && userDetails.bannerImage ? "Change" : "Add"}
-            Background (1920x640+) */}
             {!isUploading
               ? userDetails && userDetails.bannerImage
                 ? "Change Background (1920x640+)"
@@ -101,18 +101,22 @@ const PortfolioBanner = ({ userDetails }) => {
       )}
       {userDetails && userDetails.bannerImage && (
         <>
-          <div className="z-5 bg-gradient-to-t from-black w-full h-30v absolute bottom-0"></div>
+          <div className="z-10 bg-gradient-to-t from-black w-full h-30v absolute bottom-0"></div>
           {newlyUploadedBanner ? (
-            <img
+            <LazyLoadImage
+              effect="blur"
               src={newlyUploadedBanner}
               alt={user.username + " banner"}
-              className="h-full w-full"
+              height="full"
+              width="full"
             />
           ) : (
-            <img
+            <LazyLoadImage
+              effect="blur"
               src={userDetails.bannerImage}
-              alt=""
-              className="h-full w-full"
+              alt={userDetails.username}
+              height="full"
+              width="full"
             />
           )}
         </>

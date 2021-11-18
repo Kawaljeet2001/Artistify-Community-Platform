@@ -40,7 +40,7 @@ const UploadedArtworks = ({
             index={index}
             key={index}
             item={item}
-            deleteImage={(value) => deleteImage(value[0] , value[1])}
+            deleteImage={(imagename , index) => deleteImage(imagename , index)}
           />
         ))}
       </div>

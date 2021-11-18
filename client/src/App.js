@@ -9,7 +9,8 @@ import { useDispatch } from "react-redux";
 import { setUserLogin } from "./Redux/Slices/userSlice";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
-import LoadingFullscreen from "./components/LoadingFullscreen";
+// import LoadingFullscreen from "./components/LoadingFullscreen";
+import BlackLoadingFullscreen from "./components/BlackLoadingFullscreen";
 const LazySignin = React.lazy(() => import("./pages/Signin"));
 const LazySignup = React.lazy(() => import("./pages/Signup"));
 const LazyDashboard = React.lazy(() => import("./pages/Dashboard"));
@@ -63,7 +64,7 @@ function App({ location }) {
             location.pathname !== "/confirmation" &&
             !location["pathname"].includes("/resetpassword") &&
             location.pathname !== "/404" && <Navbar />}
-          <Suspense fallback={<LoadingFullscreen />}>
+          <Suspense fallback={<BlackLoadingFullscreen />}>
             <Switch>
               <Route path="/signup" exact>
                 <LazySignup />

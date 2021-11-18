@@ -1,4 +1,5 @@
 const artworkModel = require("../models/artwork");
+const userModel = require("../models/user");
 
 const allArtworksController = async (req, res) => {
   try {
@@ -34,9 +35,16 @@ const eachArtworkController = async (req, res) => {
     const artwork = await artworkModel.findOne({ _id: artworkId });
 
     if (artwork) {
-      res.status(200).send({
-        data: artwork,
-      });
+      //finding the user
+      const user = await userModel.findOne({ username: artwork.ownedBy });
+      if (!user) {
+        res.status(403).send("User Not Found");
+      } else {
+        res.status(200).send({
+          data: artwork,
+          user: {username : user.username, fullname : user.fullname}
+        });
+      }
     } else {
       res.status(404).send({
         message: "Artwork not found!",
@@ -51,6 +59,7 @@ const createArtworkController = async (req, res) => {
   try {
     const data = req.body;
     data.ownedBy = req.cookies.userProfile.username;
+    console.log(data);
     //adding the username to artworkData
     const newArtwork = new artworkModel(data);
     const savedArtwork = await newArtwork.save();

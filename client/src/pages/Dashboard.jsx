@@ -9,8 +9,13 @@ import DashboardAbout from "../components/DashboardAbout";
 import { useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import {
+  LazyLoadImage,
+  trackWindowScroll,
+} from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
-const Dashboard = () => {
+const Dashboard = ({ scrollPosition }) => {
   const { username } = useParams();
   const history = useHistory();
   const { path, url } = useRouteMatch();
@@ -50,13 +55,12 @@ const Dashboard = () => {
     ) {
       toast.success("Successfully Signed in!");
     }
-     if (user) document.title = "Artistify - " + user.fullname;
+    if (user) document.title = "Artistify - " + user.fullname;
   }, []);
 
   return (
     <div className="">
       <div className="bg-darkBlack flex flex-col items-center">
-        {/* <Message/> */}
         <ToastContainer
           hideProgressBar
           autoClose={3000}
@@ -93,10 +97,14 @@ const Dashboard = () => {
                         key={index}
                         to={`/artwork/${item._id}`}
                       >
-                        <img
+                        <LazyLoadImage
+                          effect="blur"
                           src={item.thumbnailURL}
+                          alt="this is alternate image name"
+                          height="full"
+                          width="full"
                           className="w-full object-cover object-center "
-                          alt=""
+                          scrollPosition={scrollPosition}
                         />
                         <ArtworkThumbnailTitle
                           userDetails={userDetails}
@@ -117,4 +125,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default trackWindowScroll(Dashboard);

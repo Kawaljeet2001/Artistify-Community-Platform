@@ -6,6 +6,8 @@ import { HiUpload } from "react-icons/hi";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useSelector } from "react-redux";
 import NavbarMenu from "./NavbarMenu";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const Navbar = () => {
   const user = useSelector((state) => state.user.value);
@@ -24,7 +26,6 @@ const Navbar = () => {
         <div className="flex items-center">
           <Link
             to="/projects/new"
-            target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center text-white font-medium text-sm mx-5"
           >
@@ -37,7 +38,13 @@ const Navbar = () => {
           >
             <div className="w-9 h-9 rounded-full bg-gray-500 ml-3 overflow-hidden flex items-center">
               {user && (
-                <img src={user.avatarURL} className="h-full w-full" alt="" />
+                <LazyLoadImage
+                  effect="blur"
+                  src={user.avatarURL}
+                  alt={user.username}
+                  height="full"
+                  width="full"
+                />
               )}
             </div>
             <MdKeyboardArrowDown className="text-white font-bold ml-1 text-xl mr-3" />

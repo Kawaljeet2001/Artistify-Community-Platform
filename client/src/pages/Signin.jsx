@@ -10,6 +10,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setUserLogin } from "../Redux/Slices/userSlice";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import BackToHomeLink from "../components/BackToHomeLink";
 
 const Signin = () => {
   const [doneSubmit, setdoneSubmit] = React.useState(false);
@@ -48,6 +49,7 @@ const Signin = () => {
       {" "}
       {user && <Redirect to={`/u/${user["username"]}`} />}
       <div className="bg-darkBlack w-full min-h-screen h-full overflow-y-auto flex py-10 items-center justify-center ">
+        <BackToHomeLink/>
         <ToastContainer
           hideProgressBar
           autoClose={3000}

@@ -11,6 +11,7 @@ import { setUserLogin } from "../Redux/Slices/userSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import BackToHomeLink from "../components/BackToHomeLink";
 
 const Signup = () => {
   const {
@@ -73,6 +74,7 @@ const Signup = () => {
         />
       )}
       {!loginRedirect && user && <Redirect to={`/u/${user["username"]}`} />}
+      <BackToHomeLink />
       <ToastContainer
         hideProgressBar
         autoClose={3000}

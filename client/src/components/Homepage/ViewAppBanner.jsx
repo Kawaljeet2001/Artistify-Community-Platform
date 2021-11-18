@@ -2,14 +2,20 @@ import React from "react";
 import youtubeLogo from "../../images/youtubelogo.png";
 import githublogo from "../../images/githublogo.png";
 import { TiTick } from "react-icons/ti";
+import {
+  LazyLoadImage,
+  trackWindowScroll,
+} from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 const image2URL =
   "https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/assets%2Fgetstarted.png?alt=media&token=23b25a9e-62e2-4eb5-913a-600387dcb486";
 const cardItems = ["Online portfolio", "Artist Profiles", "Collections"];
 const image1URL =
   "https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/assets%2Fviewimage.png?alt=media&token=b499cab5-9e01-42cd-bdee-8864a246d673";
-const ViewAppBanner = () => {
+const ViewAppBanner = ({ scrollPosition }) => {
   const [image2Src, setimage2Src] = React.useState("logo192.png");
-  const [image1Src, setImage1Src] = React.useState("logo192.png");
+  // const [image1Src, setImage1Src] = React.useState("logo192.png");
 
   React.useEffect(() => {
     const img = new Image();
@@ -17,19 +23,19 @@ const ViewAppBanner = () => {
     img.onload = () => setimage2Src(image2URL);
   }, [image2URL]);
 
-  React.useEffect(() => {
-    const img = new Image();
-    img.src = image1URL;
-    img.onload = () => setImage1Src(image1URL);
-  }, [image1URL]);
-
   return (
     <>
       <div className="py-12 flex items-center justify-center relative  ">
         <div className="absolute top-0 w-full h-full bg-gradient-to-b from-white opacity-10 z-10"></div>
-        <div className="w-9/12 flex items-center z-20">
-          <img alt="github" src={image1Src} className="w-5/12" />
-          <div className="w-7/12 pl-8">
+        <div className="w-9/12 flex items-center justify-center z-20">
+          <LazyLoadImage
+            effect="blur"
+            src={image1URL}
+            alt="this is alternate image name"
+            scrollPosition={scrollPosition}
+            className="w-10/12 h-full"
+          />
+          <div className="w-7/12-200 pl-8">
             <h1 className="text-white text-4xl font-medium">
               Know the Artistify Platform
             </h1>
@@ -82,6 +88,7 @@ const ViewAppBanner = () => {
           <img
             src={image2Src}
             alt="get-started"
+            loading="lazy"
             className="w-9/12 rounded-lg"
             style={{
               boxShadow:
@@ -109,4 +116,4 @@ const ViewAppBanner = () => {
   );
 };
 
-export default ViewAppBanner;
+export default trackWindowScroll(ViewAppBanner);

@@ -1,14 +1,27 @@
 import React from "react";
+import {
+  LazyLoadImage,
+  trackWindowScroll,
+} from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
-const ArtworkImages = ({images}) => {
+const ArtworkImages = ({ images, scrollPosition }) => {
   return (
     <div className="flex items-center flex-col h-full w-9/12 mt-16">
       {images.map((item, index) => (
-        <div key={index} className=" relative w-full h-70v flex items-center justify-center my-4 bg-black">
-          <img
+        <div
+          key={index}
+          className="w-full h-70v flex items-center justify-center my-4 bg-black"
+        >
+          <LazyLoadImage
+            effect="blur"
             src={item}
-            className="object-contain h-full"
-            alt=""
+            alt="artwork-detail"
+            style={{
+              maxHeight: "70vh",
+            }}
+            height = "full"
+            scrollPosition={scrollPosition}
           />
         </div>
       ))}
@@ -16,4 +29,4 @@ const ArtworkImages = ({images}) => {
   );
 };
 
-export default ArtworkImages;
+export default trackWindowScroll(ArtworkImages);
