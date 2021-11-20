@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 const path = require("path");
 const cors = require("cors");
 const corsOptions = {
@@ -17,8 +17,8 @@ const cookies = require("cookie-parser");
 app.use(cookies());
 
 //serving static files
-const buildPath = path.normalize(path.join(__dirname, "../client/build"));
-app.use(express.static(buildPath));
+// const buildPath = path.normalize(path.join(__dirname, "../client/build"));
+// app.use(express.static(buildPath));
 
 //router imports
 const rootRouter = require("./routes/rootRouter");
@@ -33,11 +33,11 @@ database.once("open", () => console.log("Database connection successful"));
 
 
 //sending allrequest to index.html
-if (process.env.ENV_MODE === "production") {
-  app.get("/*", function (req, res) {
-    res.sendFile(path.join(buildPath, "index.html"));
-  });
-}
+// if (process.env.ENV_MODE === "production") {
+//   app.get("/*", function (req, res) {
+//     res.sendFile(path.join(buildPath, "index.html"));
+//   });
+// }
 
 //root endpoint
 app.get("/api", (req, res) => {
