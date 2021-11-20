@@ -1,13 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import background from "../../images/homesection2.jpg";
 
 const HomeSection = () => {
+  const allBackgrounds = [
+    "https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/background%2Fhomesection3.jpg?alt=media&token=c4b38548-876e-4b92-a696-e421c0807c7c",
+    "https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/background%2Fhomesection2.jpg?alt=media&token=4d5b1c04-d588-46fc-b4fb-62939431f6f7",
+    "https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/background%2Fhomesection4.jpg?alt=media&token=1ec0c862-7cdf-46ea-9c22-76bb3dbb5f76",
+    "https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/background%2Fhomesection5.jpg?alt=media&token=03b43478-aa98-4ea1-a853-93a4dbe1e61c",
+    "https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/background%2Fhomesection6.jpg?alt=media&token=e2b6e145-12d9-4194-88f1-8ecb8c5c7125",
+    "https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/background%2Fhomesection7.jpg?alt=media&token=a0904d75-ca6c-459e-a820-5674adda93f2",
+  ];
+
+  const randomChoice =
+    allBackgrounds[Math.floor(Math.random() * allBackgrounds.length)];
   return (
     <div
       className="bg-darkBlack relative py-12 px-20 h-90v bg-center bg-no-repeat flex  justify-start mb-10"
       style={{
-        backgroundImage: `url(${background})`,
+        backgroundImage: `url(${randomChoice})`,
         boxShadow: "rgba(0,0,0,0.1) 0 0 0 10000px inset",
       }}
     >

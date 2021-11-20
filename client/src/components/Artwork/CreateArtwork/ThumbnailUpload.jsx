@@ -107,7 +107,16 @@ const ThumbnailUpload = ({ setUploadedThumbnail }) => {
           <img src={croppedImage} alt="thumbnail" className="w-full h-full" />
         ) : displayimage ? (
           <img src={displayimage} alt="thumbnail" className="w-full h-full" />
-        ) : null}
+        ) : (
+          <div
+            className="border-2 border-gray-500 flex items-center justify-center border-dashed rounded-lg p-4 mt-1"
+            style={{ height: "38vh" }}
+          >
+            <p className="text-gray-500 w-5/12 text-center font-medium">
+              Upload Thumbnail
+            </p>
+          </div>
+        )}
         <input
           type="file"
           accept="image/*"
@@ -115,7 +124,6 @@ const ThumbnailUpload = ({ setUploadedThumbnail }) => {
           ref={inputRef}
           onChange={onSelectFile}
         />
-        <div className=""></div>
       </div>
       <div className="flex items-center justify-center py-3">
         <button

@@ -10,6 +10,7 @@ import { setUserLogin } from "./Redux/Slices/userSlice";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
 // import LoadingFullscreen from "./components/LoadingFullscreen";
+import ProtectedRoute from "./components/ProtectedRoute";
 import BlackLoadingFullscreen from "./components/BlackLoadingFullscreen";
 const LazySignin = React.lazy(() => import("./pages/Signin"));
 const LazySignup = React.lazy(() => import("./pages/Signup"));
@@ -87,12 +88,8 @@ function App({ location }) {
               <Route path="/artwork/:artworkid" exact>
                 <LazyArtworkDetailPage />
               </Route>
-              <Route path="/projects/new" exact>
-                <LazyCreateArtwork />
-              </Route>
-              <Route path="/myartistify/edit">
-                <LazySettings />
-              </Route>
+              <ProtectedRoute path = "/projects/new" exact component = {LazyCreateArtwork}/>
+              <ProtectedRoute path = "/myartistify/edit" component = {LazySettings}/>
               <Route path="/users/forgotpassword">
                 <LazyForgotPassword />
               </Route>

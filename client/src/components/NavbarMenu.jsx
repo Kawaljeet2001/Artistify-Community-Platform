@@ -53,8 +53,8 @@ const NavbarMenu = () => {
 
   return (
     <div
-      className="absolute flex flex-col items-center rounded-sm py-3 z-40  right-0 top-12 w-60"
-      style={{ background: "#333" }}
+      className="absolute flex flex-col items-center rounded-sm py-3  right-0 top-12 w-60"
+      style={{ background: "#333", zIndex : "60" }}
     >
       <div className="w-full">
         {LinkItems.map((item, index) => (

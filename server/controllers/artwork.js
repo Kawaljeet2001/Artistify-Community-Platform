@@ -28,30 +28,56 @@ const allArtworksController = async (req, res) => {
   }
 };
 
+// const eachArtworkController = async (req, res) => {
+//   try {
+//     const artworkId = req.params.id;
+//     const artwork = await artworkModel.findOne({ _id: artworkId });
+//     console.log(artwork);
+//     // if (artwork) {
+//     //   //finding the user
+//     //   const user = await userModel.findOne({ username: artwork.ownedBy });
+//     //   if (!user) {
+//     //     res.status(403).send("User Not Found");
+//     //   } else {
+//     //     res.status(200).send({
+//     //       data: artwork,
+//     //       user: {username : user.username, fullname : user.fullname}
+//     //     });
+//     //   }
+//     // } else {
+//     //   res.status(404).send({
+//     //     message: "Artwork not found!",
+//     //   });
+//     // }
+//     res.status(200).send("yo")
+//   } catch (err) {
+//     res.status(err.status).send(err.message);
+//   }
+// };
+
 const eachArtworkController = async (req, res) => {
+  const artworkId = req.params.id;
   try {
-    const artworkId = req.params.id;
-
     const artwork = await artworkModel.findOne({ _id: artworkId });
-
-    if (artwork) {
-      //finding the user
+    if (!artworkId) {
+      res.status(404).send({
+        message: "Artwork Not found!",
+      });
+    } else {
       const user = await userModel.findOne({ username: artwork.ownedBy });
-      if (!user) {
-        res.status(403).send("User Not Found");
-      } else {
+      if (user) {
         res.status(200).send({
           data: artwork,
-          user: {username : user.username, fullname : user.fullname}
+          user: { username: user.username, fullname: user.fullname },
+        });
+      } else {
+        res.status(500).send({
+          message: "Internal server error, artwork does not exists.",
         });
       }
-    } else {
-      res.status(404).send({
-        message: "Artwork not found!",
-      });
     }
   } catch (err) {
-    res.status(err.status).send(err.message);
+    res.status(500).send("Server Error");
   }
 };
 

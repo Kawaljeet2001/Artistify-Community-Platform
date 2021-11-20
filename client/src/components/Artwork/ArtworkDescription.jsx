@@ -9,7 +9,7 @@ const ArtworkDescription = ({ data }) => {
       </h1>
       <Link
         to={`/u/${data.user.username}`}
-        className="text-lightblue mt-2 text-lg"
+        className="text-lightblue mt-2 text-lg hover:opacity-80 transition duration-200"
       >
         by - {data.user.fullname ? data.user.fullname : data.user.username}
       </Link>

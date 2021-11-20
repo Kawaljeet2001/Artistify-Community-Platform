@@ -13,6 +13,7 @@ const userProfileController = async (req, res) => {
       });
     } else {
       res.status(500).send({
+        type : "404",
         message: "Error Occured.Profile not found!",
       });
     }

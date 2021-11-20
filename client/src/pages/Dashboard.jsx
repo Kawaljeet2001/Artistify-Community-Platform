@@ -2,7 +2,14 @@
 import React from "react";
 import axios from "axios";
 import { useParams, useHistory } from "react-router";
-import { NavLink, Link, useRouteMatch, Switch, Route } from "react-router-dom";
+import {
+  NavLink,
+  Link,
+  useRouteMatch,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import PortfolioBanner from "../components/PortfolioBanner";
 import ArtworkThumbnailTitle from "../components/Artwork/ArtworkThumbnailTitle";
 import DashboardAbout from "../components/DashboardAbout";
@@ -33,6 +40,7 @@ const Dashboard = ({ scrollPosition }) => {
       console.log(err);
     }
   };
+  const [redirect, setRedirect] = React.useState(false);
   const getUserDetails = async () => {
     try {
       const res = await axios.get(`/api/user/profile/${username}`, {
@@ -40,7 +48,9 @@ const Dashboard = ({ scrollPosition }) => {
       });
       setUserDetails(res.data.data);
     } catch (err) {
-      console.log(err);
+      if (err.response.data.type && err.response.data.type === "404") {
+        setRedirect(true);
+      }
     }
   };
   React.useEffect(() => {
@@ -60,6 +70,7 @@ const Dashboard = ({ scrollPosition }) => {
 
   return (
     <div className="">
+      {redirect && <Redirect to="/404" />}
       <div className="bg-darkBlack flex flex-col items-center">
         <ToastContainer
           hideProgressBar

@@ -2,10 +2,7 @@ import React from "react";
 import youtubeLogo from "../../images/youtubelogo.png";
 import githublogo from "../../images/githublogo.png";
 import { TiTick } from "react-icons/ti";
-import {
-  LazyLoadImage,
-  trackWindowScroll,
-} from "react-lazy-load-image-component";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 
 const image2URL =
@@ -13,9 +10,8 @@ const image2URL =
 const cardItems = ["Online portfolio", "Artist Profiles", "Collections"];
 const image1URL =
   "https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/assets%2Fviewimage.png?alt=media&token=b499cab5-9e01-42cd-bdee-8864a246d673";
-const ViewAppBanner = ({ scrollPosition }) => {
+const ViewAppBanner = () => {
   const [image2Src, setimage2Src] = React.useState("logo192.png");
-  // const [image1Src, setImage1Src] = React.useState("logo192.png");
 
   React.useEffect(() => {
     const img = new Image();
@@ -32,8 +28,8 @@ const ViewAppBanner = ({ scrollPosition }) => {
             effect="blur"
             src={image1URL}
             alt="this is alternate image name"
-            scrollPosition={scrollPosition}
             className="w-10/12 h-full"
+            threshold={2}
           />
           <div className="w-7/12-200 pl-8">
             <h1 className="text-white text-4xl font-medium">
@@ -116,4 +112,4 @@ const ViewAppBanner = ({ scrollPosition }) => {
   );
 };
 
-export default trackWindowScroll(ViewAppBanner);
+export default ViewAppBanner;

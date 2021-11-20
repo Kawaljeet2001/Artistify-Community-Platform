@@ -4,7 +4,12 @@ import { ImCross } from "react-icons/im";
 import { HiUpload } from "react-icons/hi";
 import { useSelector } from "react-redux";
 import { storage } from "../firebaseConfig";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import {
+  ref,
+  uploadBytes,
+  getDownloadURL,
+  deleteObject,
+} from "firebase/storage";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,6 +20,7 @@ const PortfolioBanner = ({ userDetails }) => {
   const user = useSelector((state) => state.user.value);
   const [bannerImage, setBannerImage] = React.useState(null);
   const [isUploading, setIsUploading] = React.useState(false);
+  const [isRemoving, setIsRemoving] = React.useState(false);
   const [newlyUploadedBanner, setNewlyUploadedBanner] = React.useState(false);
 
   const uploadNewProfileBanner = () => {
@@ -48,6 +54,44 @@ const PortfolioBanner = ({ userDetails }) => {
     }
   };
 
+  const deleteBanner = async () => {
+    try {
+      const defaultURL =
+        "https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/banner%2Fdefault.jpg?alt=media&token=1b7f9947-44e0-4b7a-91f2-432a479b8ec0";
+
+      if (!newlyUploadedBanner && defaultURL === userDetails.bannerImage) {
+        toast.error("Background already removed!");
+        return;
+      }
+      setIsRemoving(!isRemoving);
+      let deleteBannerStorageRef;
+      if (newlyUploadedBanner)
+        deleteBannerStorageRef = ref(storage, newlyUploadedBanner);
+      else {
+        deleteBannerStorageRef = ref(storage, userDetails.bannerImage);
+      }
+      const res = await deleteObject(deleteBannerStorageRef);
+      console.log(res);
+
+      //also send a request to update the db
+      const dbres = await axios.patch(
+        "/api/user/update",
+        { bannerImage: defaultURL },
+        {
+          withCredentials: true,
+        }
+      );
+      if (dbres) {
+        setNewlyUploadedBanner(defaultURL);
+        setIsRemoving(false);
+        toast.success("Background removed successfully!");
+        window.location.reload();
+      }
+      console.log(dbres.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   React.useEffect(() => {
     if (bannerImage) {
       uploadBanner(bannerImage);
@@ -72,7 +116,7 @@ const PortfolioBanner = ({ userDetails }) => {
       />
       <BannerProfileInfo userDetails={userDetails} />
       {user && userDetails && user.username === userDetails.username && (
-        <div className="absolute right-10 top-10 z-30 flex items-end flex-col">
+        <div className="absolute right-10 top-10 z-20 flex items-end flex-col">
           <button
             className="flex items-center text-white bg-darkBlack my-1 px-2 py-1 border border-gray-500 opacity-60 hover:opacity-100 transition duration-200"
             style={{ fontSize: "12px" }}
@@ -92,9 +136,11 @@ const PortfolioBanner = ({ userDetails }) => {
               className="flex items-center text-white bg-darkBlack my-1 px-2 py-1 border border-gray-500 opacity-60 hover:opacity-100 transition duration-200"
               style={{ fontSize: "12px" }}
               type="button"
+              onClick={deleteBanner}
+              disabled={isRemoving}
             >
-              <ImCross className="text-vsm text-lightblue" /> &nbsp; Remove
-              Background
+              <ImCross className="text-vsm text-lightblue" /> &nbsp;{" "}
+              {isRemoving ? "Removing..." : "Remove Background"}
             </button>
           )}
         </div>

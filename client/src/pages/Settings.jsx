@@ -8,6 +8,10 @@ import SettingsHeader from "../components/Settings/SettingsHeader";
 const Settings = () => {
   const { url, path } = useRouteMatch();
   const location = useLocation();
+
+  React.useEffect(() => {
+    document.title = "Artistify - Profile"
+  } , [])
   return (
     <div className="bg-darkBlack flex justify-center py-8 min-h-screen">
       <div className="w-9/12 grid grid-cols-8 gap-6 mt-10">

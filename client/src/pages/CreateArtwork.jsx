@@ -66,18 +66,21 @@ const CreateArtwork = () => {
 
   React.useEffect(() => {
     if (localStorage.getItem("newArtworkId")) {
-      console.log(localStorage.getItem("newArtworkId"));
       if(!artworkId)
-      setArtworkId(localStorage.getItem("newArtworkId"));
+      // setArtworkId(localStorage.getItem("newArtworkId"));
+      setArtworkId("lulu");
     }
     else
     {
       console.log("does not exists");
       const id = crypto.randomBytes(8).toString("hex");
-      setArtworkId(id);
+      // setArtworkId(id);
+      setArtworkId("lulu")
       localStorage.setItem("newArtworkId", id);
 
     }
+
+    document.title = "Artistify - New Artwork"
     // console.log(localStorage.getItem("newArtworkId"));
   }, [])
 

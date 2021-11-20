@@ -51,7 +51,7 @@ const schema = new mongoose.Schema({
   bannerImage: {
     type: String,
     default:
-      "https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/banner%2Fdefault.jpg?alt=media&token=8ebf3a20-b06f-4e7d-b664-9503e3eb7668",
+      "https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/banner%2Fdefault.jpg?alt=media&token=1b7f9947-44e0-4b7a-91f2-432a479b8ec0",
   },
   skills: [String],
   software: [String],

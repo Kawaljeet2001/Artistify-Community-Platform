@@ -8,6 +8,9 @@ import ViewAppBanner from "../components/Homepage/ViewAppBanner";
 import { FiRefreshCw } from "react-icons/fi";
 
 const Home = () => {
+  React.useEffect(() => {
+    document.title = "Artistify Community Platform - For leading artists. "
+  }, [])
   return (
     <div className="z-0 min-h-screen bg-darkBlack">
       <HomeSection />
