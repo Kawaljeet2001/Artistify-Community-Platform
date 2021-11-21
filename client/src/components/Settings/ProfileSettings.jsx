@@ -92,7 +92,7 @@ const ProfileSettings = () => {
       />
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="grid grid-cols-2 gap-8"
+        className="flex flex-col-reverse lg:grid grid-cols-2 gap-8"
       >
         <div>
           <Textfield

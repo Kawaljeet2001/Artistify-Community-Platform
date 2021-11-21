@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const BackToHomeLink = () => {
   return (
     <Link
-      className="flex items-center text-lightblue absolute left-10 top-10 hover:scale-105 transform transition duration-200"
+      className="flex items-center text-lightblue absolute left-10 top-4 lg:top-10 hover:scale-105 transform transition duration-200"
       style={{ fontSize: "14px" }}
       to="/"
     >

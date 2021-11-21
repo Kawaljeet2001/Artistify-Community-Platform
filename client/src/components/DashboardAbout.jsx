@@ -76,13 +76,13 @@ const DashboardAbout = ({ userDetails }) => {
 
       <div className="mt-20 flex flex-col items-center">
         <p className="text-white text-2xl font-light">Software</p>
-        <div className="flex items-center mt-4">
+        <div className="flex items-center mt-4 flex-wrap justify-center lg:justify-start">
           {userDetails &&
             userDetails.software.map((item, index) => {
               return (
                 <div
                   key={index}
-                  className="text-lightblue border border-lightblue px-2.5 py-1 text-sm rounded-sm mx-2"
+                  className="text-lightblue border border-lightblue px-2.5 py-1 text-sm my-2 lg:my-0 rounded-sm mx-2"
                 >
                   <p style={{ fontSize: "12px" }}>{item}</p>
                 </div>

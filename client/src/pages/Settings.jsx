@@ -14,9 +14,9 @@ const Settings = () => {
   } , [])
   return (
     <div className="bg-darkBlack flex justify-center py-8 min-h-screen">
-      <div className="w-9/12 grid grid-cols-8 gap-6 mt-10">
+      <div className="w-11/12 lg:w-9/12 grid grid-cols-8 gap-6 mt-10">
         <SettingsMenu url={url} />
-        <div className="col-span-5">
+        <div className="col-span-8 lg:col-span-5">
           <SettingsHeader data={location.pathname} />
           <Switch>
             <Route path={`${path}/profile`} exact>

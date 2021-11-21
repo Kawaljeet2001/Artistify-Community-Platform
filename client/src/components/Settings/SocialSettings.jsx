@@ -96,7 +96,7 @@ const SocialSettings = () => {
   }, [toggle]);
   return (
     <div
-      className="bg-gray-500 bg-opacity-10 py-6 px-8 flex flex-col"
+      className="bg-gray-500 bg-opacity-10 py-6 px-2 lg:px-8 flex flex-col"
       style={{ minHeight: "60vh" }}
     >
       <ToastContainer

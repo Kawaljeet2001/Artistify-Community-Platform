@@ -2,7 +2,7 @@ import React from "react";
 
 const Note = () => {
   return (
-    <div className="bg-black3 bg-opacity-40 h-32 flex rounded-sm ">
+    <div className="bg-black3 bg-opacity-40 h-32 hidden lg:flex rounded-sm ">
       <div className="bg-yellow-500 w-2.5 h-full"></div>
       <div className="px-3 flex flex-col justify-center">
         <p className="text-gray-400 flex" style={{ fontSize: "13px" }}>

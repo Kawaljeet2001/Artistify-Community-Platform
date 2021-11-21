@@ -104,7 +104,7 @@ const CreateArtwork = () => {
       {submitted && <LoadingFullscreen />}
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="grid grid-cols-8 gap-8 w-11/12 mt-6 h-full"
+        className="flex flex-col lg:grid grid-cols-8 gap-8 w-11/12 mt-6 h-full"
       >
         <div className="col-span-6">
           <ArtworkTitle

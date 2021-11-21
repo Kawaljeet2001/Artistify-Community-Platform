@@ -2,7 +2,7 @@ import React from "react";
 
 const ArtworkThumbnailTitle = ({ userDetails, artworkDetails }) => {
   return (
-    <div className="bg-gradient-to-t from-black group-hover:opacity-100 opacity-0 bg-opacity-75 absolute bottom-0 w-full px-3 pb-4 pt-24 flex transition duration-200">
+    <div className="bg-gradient-to-t from-black group-hover:opacity-100 opacity-0 bg-opacity-75 absolute bottom-0 w-full px-3 pb-4 pt-24 hidden lg:flex transition duration-200">
       <div className="w-12 h-12 rounded-full bg-gray-500 items-center overflow-hidden">
         <img
           src={userDetails && userDetails.avatarURL}
