@@ -1,4 +1,0 @@
-const createArtwork = (req) => {
-
-    const {}
-}
