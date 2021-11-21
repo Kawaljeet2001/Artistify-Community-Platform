@@ -19,7 +19,7 @@ const ArtworkGrid = () => {
   }, []);
 
   return (
-    <div className="grid grid-cols-2 gap-2 grid-rows-6 md:grid-cols-4 lg:grid-cols-8 w-full mb-3" style = {{minHeight : "50vh"}}>
+    <div className="grid grid-cols-3 gap-2 grid-rows-6 md:grid-cols-4 lg:grid-cols-8 w-full mb-3" style = {{minHeight : "50vh"}}>
       {artworks &&
         artworks.map((item, index) => (
           <DisplayArtworkCard item={item} index={index} />

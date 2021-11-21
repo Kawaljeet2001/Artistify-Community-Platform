@@ -31,20 +31,20 @@ const ViewAppBanner = () => {
             className="w-10/12 h-full"
             threshold={2}
           />
-          <div className="w-7/12-200 pl-8">
-            <h1 className="text-white text-4xl font-medium">
+          <div className="w-7/12-200 lg:pl-8">
+            <h1 className="text-white text-4xl font-medium text-center lg:text-left">
               Know the Artistify Platform
             </h1>
-            <p className="text-gray-400 mt-4" style={{ fontSize: "14px" }}>
+            <p className="text-gray-400 mt-4 text-center lg:text-left" style={{ fontSize: "14px" }}>
               The Artistify Community Platform provides an awesome browsing and
               discovery experience, enabling you to view thousands of artworks
               by the world's best artists.
             </p>
             <div className="flex items-center mt-6">
               {cardItems.map((item, index) => (
-                <div key={index} className="flex items-center mr-8">
+                <div key={index} className="flex items-center lg:mr-8">
                   <TiTick className="text-green-500 text-xl bg-gray-500 bg-opacity-30 rounded-full mr-2" />
-                  <p className="text-white font-medium text-lg ">{item}</p>
+                  <p className="text-white font-medium lg:text-lg ">{item}</p>
                 </div>
               ))}
             </div>
@@ -79,24 +79,24 @@ const ViewAppBanner = () => {
           </div>
         </div>
       </div>
-      <div className="bg-darkBlack pt-8 pb-16 w-full flex items-center justify-center">
-        <div className="w-6/12 flex justify-end items-center overflow-hidden rounded-lg px-4">
+      <div className="bg-darkBlack pt-8 pb-16 w-full flex flex-col-reverse lg:flex-row items-center justify-center">
+        <div className="w-11/12 mt-6 lg:mt-0 lg:w-6/12 flex justify-end items-center overflow-hidden rounded-lg px-4">
           <img
             src={image2Src}
             alt="get-started"
             loading="lazy"
-            className="w-9/12 rounded-lg"
+            className="w-full lg:w-9/12 rounded-lg"
             style={{
               boxShadow:
                 "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
             }}
           />
         </div>
-        <div className="flex flex-col w-6/12 px-6">
-          <h3 className="text-white text-3xl">
+        <div className="flex flex-col w-full items-center lg:items-start lg:w-6/12 px-6">
+          <h3 className="text-white text-3xl text-center lg:text-left">
             Get inspired with every new artwork
           </h3>
-          <p className="text-gray-400 mt-4" style={{ fontSize: "15px" }}>
+          <p className="text-gray-400 mt-4 text-center lg:text-left" style={{ fontSize: "15px" }}>
             Artistify enables art lovers to discover amazing artworks, by being
             right in their browsers.
             <br />

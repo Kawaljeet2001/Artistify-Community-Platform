@@ -68,19 +68,19 @@ const SubscribeCards = () => {
         backgroundImage: `url(${backgroundSrc})`,
         boxShadow: "rgba(0,0,0,0.5) 0 0 0 1000px inset",
       }}
-      className="w-full flex items-center h-80v py-16 px-12 bg-center bg-no-repeat relative"
+      className="w-full flex-col lg:flex-row flex items-center h-full lg:h-80v py-16 px-4 lg:px-12 bg-cover lg:bg-center bg-no-repeat relative"
     >
-      <div className="text-white flex flex-col w-5/12">
-        <p className="text-lightblue font-medium">SUBSCRIBE</p>
-        <h3 className="text-4xl font-medium mt-1">
+      <div className="text-white flex flex-col w-11/12 lg:w-5/12">
+        <p className="text-lightblue font-medium text-center lg:text-left">SUBSCRIBE</p>
+        <h3 className="text-4xl font-medium mt-1 text-center lg:text-left">
           Take your Art to the Next Level
         </h3>
-        <p className="text-gray-300 mt-2">
+        <p className="text-gray-300 mt-2 text-center lg:text-left">
           With Artistify, get everything you need to help grow your brand, build
           your presence and advance your career as an artist.
         </p>
       </div>
-      <div className="flex items-center w-7/12">
+      <div className="flex flex-col lg:flex-row items-center w-11/12 lg:w-7/12">
         {cardData.map((item, index) => (
           <CardComponent key={index} data={item} />
         ))}

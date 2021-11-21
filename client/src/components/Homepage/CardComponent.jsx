@@ -5,7 +5,7 @@ const CardComponent = ({ data }) => {
   return (
     <Link
       to={data.to}
-      className="text-white rounded-xl bg-darkBlack block pt-3 z-10 w-5/12 mx-8"
+      className="text-white rounded-xl bg-darkBlack block pt-3 z-10 my-3 lg:my-0 w-full lg:w-5/12 mx-8"
       style={{
         boxShadow:
           "rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px",
