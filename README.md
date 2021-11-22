@@ -9,6 +9,9 @@ Create your portfolio, demonstrate your talent to recruiters and pave the way ah
 
 
 
+![Logo](https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/assets%2Flogo_full.png?alt=media&token=b8102169-d7d3-4f4c-8dbc-212066713027)
+
+
 ## Idea behind the project
 
 [Documentation](https://linktodocumentation)
@@ -16,7 +19,9 @@ Create your portfolio, demonstrate your talent to recruiters and pave the way ah
 
 ## Demo
 
-Insert gif or link to demo
+Live hosted link: [Site Link](https://artistifycommunity.netlify.app/)
+
+Projct Demo link: [Demo Link](https://artistifycommunity.netlify.app/)
 
 
 ## Dev Tools/Technologies
@@ -39,6 +44,12 @@ The app includes many characteristic features:
 - React SPA deployed on **Netlify**.
 
 
+
+## App Screenshots
+
+![Home page](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+
+![Auth Pages](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 ## Color Reference
 
 | Color             | Hex                                                                |
