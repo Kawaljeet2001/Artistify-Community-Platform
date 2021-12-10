@@ -1,70 +1,133 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Artistify Community Platform
 
-## Available Scripts
+A platform designed for leading digital artists around the globe to showcase their work and create an online presence for their brand.
+Create your portfolio, demonstrate your talent to recruiters and pave the way ahead for your bright career as an artist.
 
-In the project directory, you can run:
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Logo](https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/assets%2Flogo_full.png?alt=media&token=b8102169-d7d3-4f4c-8dbc-212066713027)
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Idea behind the project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+There are a lot of digital artists/game developers who are making great digital artworks,indie games, animated videos, etc. But there is a lack of platforms where they can create their portfolio, showcase their artworks and also, send their profiles to potential recruiters for job oppurtunities.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Hence, Artistify was made to enable individual artists to easily create their online portfolio, establish their brand's online presence, connect with other fellow community members and pave a way for their great career as an artist.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Demo
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Live hosted link: [Site Link](https://artistifycommunity.netlify.app/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Projct Demo link: [Demo Link](https://youtu.be/E302nz_ihtA)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Dev Tools/Technologies
+The app includes many characteristic features:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **JWT Authentication** to securely signin in and avail the services as a registered user.
+- **Reset / Forgot / Lost password** retrieval system.
+- **Nodemailer** used for template based emails for reset-password and signup.
+- Seamless content creation using **Firebase Storage** engine.
+- Implemented **Lazy-loading** to optimize component and image loading.
+- Added **Route-based Code Splitting** for reducing js-bundle size on app loading.
+- **Redux** is used for proper state management in the client side.
+- Api request handled using **axios**
+- Form fields managed using **React-Hook-Form**.
+- **Tailwind CSS**, utility for rapid styling using classes.
+- Used **React-easy-crop** package to enable image cropping/scaling feature.
+- **react-toastify** is used for sounding alerts and error management.
+- SVG icons referred from **react-icons**.
+- Server-side deployed on **Heroku**.
+- React SPA deployed on **Netlify**.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## App Screenshots
 
-### Analyzing the Bundle Size
+![Home page](https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/assets%2FScreenshot%20(2812).png?alt=media&token=ac40ce9f-e27e-4e14-9e6f-c2dc14fc65b1)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Home page](https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/assets%2FScreenshot%20(2813).png?alt=media&token=8874699c-98a9-4167-9a1c-191e49c1f924)
 
-### Making a Progressive Web App
+![Home page](https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/assets%2FScreenshot%20(2814).png?alt=media&token=fb459960-49ab-4816-ac66-470585668821)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+![Signin Page](https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/assets%2FScreenshot%20(2815).png?alt=media&token=8ec3ef23-eedc-4d27-a273-e88d9a927853)
 
-### Advanced Configuration
+![Signup Page](https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/assets%2FScreenshot%20(2820).png?alt=media&token=45cf2520-bb14-4d98-ae3d-95f5810e8baf)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![Dashboard](https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/assets%2FScreenshot%20(2816).png?alt=media&token=88e11924-1316-462a-90cf-998b3177d884)
 
-### Deployment
+![Artwork Detail](https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/assets%2FScreenshot%20(2817).png?alt=media&token=b7aa56d8-2b27-400f-aece-27904fa68024)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![Settings Profile](https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/assets%2FScreenshot%20(2818).png?alt=media&token=1249a659-5c82-4c59-8423-32984a1a331b)
 
-### `yarn build` fails to minify
+![Create New Artwork](https://firebasestorage.googleapis.com/v0/b/artistifycommunity.appspot.com/o/assets%2FScreenshot%20(2819).png?alt=media&token=cc7202e7-d14a-4df4-964e-7ebc3cc3453a)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+## Color Reference
+
+| Color             | Hex                                                                |
+| ----------------- | ------------------------------------------------------------------ |
+| Light Blue | ![#13aff0](https://via.placeholder.com/10/13aff0?text=+) #13aff0 |
+| Dark Black | ![#171717](https://via.placeholder.com/10/171717?text=+) #171717 |
+| Slate Green | ![#10b981](https://via.placeholder.com/10/10b981?text=+) #10b981 |
+
+
+
+## Environment Variables
+
+To run this project, you will need to add the following environment variables to your .env file in the server directory
+
+`DATABASE_CONNECTION_URL`
+
+`JWT_TOKEN_KEY`
+
+`GMAIL_APP_PASSWORD`
+
+`GMAIL_APP_USER`
+
+`PORT`
+
+
+
+
+## Installation
+
+Follow the steps to setup a developement environment for this app:
+
+- Clone this repo. Use the command, or simple download the zip file for code
+```bash
+  git clone https://github.com/Kawaljeet2001/Artistify-Community-Platform.git
+```
+
+- Setting up server dependencies
+```bash
+  cd ./server
+  yarn install or npm install
+```
+
+- Create .env file and add in all the environment variables
+
+- Setting up client dependencies
+```bash
+  cd ./client
+  yarn install or npm install
+```
+
+- Starting the dev servers
+```bash
+  cd ./client
+  yarn start
+
+  
+  cd ./server
+  nodemon server or npm start
+```
+- You'll also need to create a MongoDB Atlas Cluster and add the database connection url in the env variables
+    
