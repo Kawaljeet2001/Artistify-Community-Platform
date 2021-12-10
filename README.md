@@ -29,10 +29,13 @@ Projct Demo link: [Demo Link](https://youtu.be/E302nz_ihtA)
 ## Dev Tools/Technologies
 The app includes many characteristic features:
 
+- Client side code written in **React**
+- **Node** and **Express** used for server side code.
+- **MongoDB Atlas** is used for being fast, scalable, and document based database.
+- Seamless content creation using **Firebase Storage** engine.
 - **JWT Authentication** to securely signin in and avail the services as a registered user.
 - **Reset / Forgot / Lost password** retrieval system.
 - **Nodemailer** used for template based emails for reset-password and signup.
-- Seamless content creation using **Firebase Storage** engine.
 - Implemented **Lazy-loading** to optimize component and image loading.
 - Added **Route-based Code Splitting** for reducing js-bundle size on app loading.
 - **Redux** is used for proper state management in the client side.
