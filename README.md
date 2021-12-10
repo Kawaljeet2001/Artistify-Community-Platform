@@ -14,14 +14,16 @@ Create your portfolio, demonstrate your talent to recruiters and pave the way ah
 
 ## Idea behind the project
 
-[Documentation](https://linktodocumentation)
+There are a lot of digital artists/game developers who are making great digital artworks,indie games, animated videos, etc. But there is a lack of platforms where they can create their portfolio, showcase their artworks and also, send their profiles to potential recruiters for job oppurtunities.
+
+Hence, Artistify was made to enable individual artists to easily create their online portfolio, establish their brand's online presence, connect with other fellow community members and pave a way for their great career as an artist.
 
 
 ## Demo
 
 Live hosted link: [Site Link](https://artistifycommunity.netlify.app/)
 
-Projct Demo link: [Demo Link](https://artistifycommunity.netlify.app/)
+Projct Demo link: [Demo Link](https://youtu.be/E302nz_ihtA)
 
 
 ## Dev Tools/Technologies

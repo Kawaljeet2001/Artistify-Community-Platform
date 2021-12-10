@@ -50,7 +50,7 @@ const ViewAppBanner = () => {
             </div>
             <div className="mt-8 flex items-center">
               <a
-                href="http://google.com"
+                href="https://youtu.be/E302nz_ihtA"
                 rel="noreferrer"
                 className="text-white mr-6 bg-gray-500 hover:bg-gray-400 bg-opacity-30 flex items-center justify-center p-2 rounded-xl w-40"
               >
@@ -63,7 +63,7 @@ const ViewAppBanner = () => {
                 </div>
               </a>
               <a
-                href="/"
+                href="https://github.com/Kawaljeet2001/Artistify-Community-Platform"
                 rel="noreferrer"
                 className="text-white bg-gray-500 hover:bg-gray-400 bg-opacity-30 flex items-center justify-center p-2 rounded-xl w-40 "
               >
@@ -103,9 +103,9 @@ const ViewAppBanner = () => {
             Simply visit the platform and it will load random picks from
             Artistify.com.
           </p>
-          <button className="bg-gray-500 bg-opacity-10 border border-gray-700 mt-4 p-3 rounded-md text-gray-400 w-44">
+          <a href = "/signin" className="bg-gray-500 bg-opacity-10 block border border-gray-700 mt-4 p-3 rounded-md text-gray-400 w-44">
             Get Started
-          </button>
+          </a>
         </div>
       </div>
     </>

@@ -13,8 +13,8 @@ const DemoVideo = () => {
         <iframe
           width="560"
           height="315"
-          src="https://youtu.be/E302nz_ihtA"
-          title="YouTube video player"
+          src="https://www.youtube.com/embed/E302nz_ihtA"
+          title="Artistify Community Platform Demo Video"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
@@ -22,7 +22,9 @@ const DemoVideo = () => {
         ></iframe>
       </div>
       <div className="text-white flex flex-col w-full lg:w-5/12 lg:pl-12">
-        <p className="text-lightblue font-medium text-center lg:text-left">VIEW DEMO</p>
+        <p className="text-lightblue font-medium text-center lg:text-left">
+          VIEW DEMO
+        </p>
         <h3 className="text-4xl font-medium mt-1 text-center lg:text-left">
           See what Artistify is all about
         </h3>
